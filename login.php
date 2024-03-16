@@ -28,10 +28,10 @@ if(isset($_POST['customer_name']))
     $rows = mysqli_num_rows($result);
 
     if ($rows == 1){
-        $_SESSION['customer_name'] = $customer_name;
-        $_SESSION['customer_id'] = $userData['customer_ID'];
-        $_SESSION['last_timestamp'] = time();
         $userData = mysqli_fetch_assoc($result);
+        $_SESSION['customer_name'] = $customer_name;
+        $_SESSION['customer_ID'] = $userData['customer_ID'];
+        $_SESSION['last_timestamp'] = time();
 
         if (isset($_POST['remember_me'])) {
             $cookie_name = "user";
