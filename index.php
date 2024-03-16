@@ -1,5 +1,5 @@
 <?php
-include("auth.php");
+require("header.php");
 
 if(isset($_COOKIE["user"])) {
     $cookie_value = $_COOKIE["user"];
@@ -20,7 +20,6 @@ if(isset($_COOKIE["user"])) {
         <p>This is secure area.</p><br>
         <p><a href="dashboard.php">User Dashboard</a></p><br>
         <p><a href="delete_cookie.php">Delete Cookie</a></p><br>
-        <a href="logout.php">Logout</a>
     </div>
 
 </body>

@@ -1,6 +1,5 @@
 <?php
-include("auth.php");
-require('database.php');
+require("header.php");
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +11,6 @@ require('database.php');
 <body>
     <div class = "form">
     <p>Access Granted - This page is protected.</p>
-    <p><a href="index.php">Home</a></p>
     <p><a href="order.php">Order</a></p>
-    <a href="logout.php">Logout</a>
 </body>
 </html>

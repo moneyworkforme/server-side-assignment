@@ -1,6 +1,6 @@
 <?php
 session_start();
-$timeout_duration = 100;
+$timeout_duration = 99999;
 
 if (!isset($_SESSION['customer_name']) || (time() - $_SESSION['last_timestamp']) > $timeout_duration) {
     session_unset();
