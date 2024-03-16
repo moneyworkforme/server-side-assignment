@@ -14,6 +14,15 @@ if (isset($_POST['new']) && $_POST['new'] == 1) {
     mysqli_query($con,$ins_query) or die(mysqli_error($con));
 }
 
+if (isset($_POST['Update'])) {
+    $order_product_ID = $_POST['order_product_ID'];
+    $quantity = $_POST['quantity'];
+
+    $upd_query="UPDATE order_product SET quantity = '".$quantity."' WHERE order_product_ID='".$order_product_ID."';";
+    mysqli_query($con, $upd_query) or die(mysqli_error($con));
+    echo "Product Record Updated Successfully.";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -47,13 +56,15 @@ if (isset($_POST['new']) && $_POST['new'] == 1) {
                 while($row = mysqli_fetch_assoc($result)) {
                 ?>
                     <tr>
+                        <form name="form" method="post" action="">
                         <td align="center"><?php echo $count; ?></td>
-                        <td align="center"><input type = "text" name = "product_ID" placeholder = "Update Product ID" required value = "<?php echo $row['product_ID'];?>"></td>
+                        <td align="center"><?php echo $row['order_product_ID']; ?></td>
                         <td align="center"><input type = "number" name = "quantity" placeholder = "Update Quantity" required value = "<?php echo $row['quantity'];?>"></td>
-                        <td align="center">RM<input type = "text" name = "unit_price" placeholder = "Update Unit Price" required value = "<?php echo $row['unit_price'];?>"></td>
+                        <td align="center"><?php echo $currencySymbol . $row['unit_price']; ?></td>
                         <td align="center">
-                            <a href="order_product_update.php">Update</a>
-                            <a href="order_product_delete.php">Delete</a>
+                        <input type="hidden" name="order_product_ID" value="<?php echo $row['order_product_ID']; ?>">
+                        <input type="submit" name="Update" value="Update">
+                        </form>
                         </td>
                     </tr>
                 <?php $count++; } }?>
