@@ -49,6 +49,7 @@ if (isset($_POST['Update'])) {
         <?php
             if(isset($_GET['order_ID'])) {
                 $count = 1;
+                $total_price = 0;
                 $order_ID = $_GET['order_ID'];
                 $sel_query = "SELECT * FROM order_product WHERE order_ID ='". $order_ID . "';";
                 $result = mysqli_query($con, $sel_query) or die ( mysqli_error($con));
@@ -67,8 +68,17 @@ if (isset($_POST['Update'])) {
                         </form>
                         </td>
                     </tr>
-                <?php $count++; } }?>
-            </tbody>
+                <?php 
+                    $count++;
+                    $total_price += $row['unit_price'] * $row['quantity'];
+
+                    $upd_total_price_query = "UPDATE `order` SET total_price = '$total_price' WHERE order_ID = '$order_ID'";
+                    mysqli_query($con, $upd_total_price_query) or die(mysqli_error($con)); } }?>
+        </tbody>
+        <tfoot>
+            <td colspan  = "3" align="right">Total Price:</td>
+            <td colspan = "1" align="center"><?php echo $currencySymbol . number_format($total_price, 2); ?></td>
+        </tfoot>
     </table>
 
     <?php
@@ -94,5 +104,7 @@ if (isset($_POST['Update'])) {
                 <input name="reset" type="reset" value="Reset" /></p>
         </form>
     </div>
+    <hr>
+    <a href = "order.php">Back to order</a>
 </body>
 </html>
