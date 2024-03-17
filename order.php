@@ -42,12 +42,12 @@ $currencySymbol = "RM";
                 <td align="center"><?php echo $currencySymbol . $row['total_price']; ?></td>
                 <td align="center"><?php echo $row['status']; ?></td>
                 <td align="center">
-                    <a href="order_view.php">View</a>
+                    <a href="order_view.php?order_ID=<?php echo $row['order_ID']; ?>">View</a>
                     <a href="order_update.php?order_ID=<?php echo $row['order_ID']; ?>">Update</a>
-                    <a href="order_delete.php">Delete</a>
+                    <a href="order_delete.php?order_ID=<?php echo $row['order_ID']; ?>">Delete</a>
                 </td>
                 <td align="center">
-                    <a href="order_confirm.php">Confirm</a>
+                    <a href="order_confirm.php?order_ID=<?php echo $row['order_ID'];?>">Confirm</a>
                 </td>
             </tr>
         <?php } ?>

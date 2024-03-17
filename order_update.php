@@ -2,6 +2,7 @@
 require("header.php");
 
 $currencySymbol = "RM";
+$total_price = 0;
 
 if (isset($_POST['new']) && $_POST['new'] == 1) {
     $order_ID = $_REQUEST['order_ID'];
@@ -21,6 +22,13 @@ if (isset($_POST['Update'])) {
     $upd_query="UPDATE order_product SET quantity = '".$quantity."' WHERE order_product_ID='".$order_product_ID."';";
     mysqli_query($con, $upd_query) or die(mysqli_error($con));
     echo "Product Record Updated Successfully.";
+}
+
+if (isset($_POST['Delete'])) {
+    $order_product_ID = $_POST['order_product_ID'];
+
+    $del_query = "DELETE FROM `order_product` WHERE order_product_ID = $order_product_ID";
+    $result = mysqli_query($con, $del_query) or die(mysqli_error($con));
 }
 
 ?>
@@ -65,6 +73,7 @@ if (isset($_POST['Update'])) {
                         <td align="center">
                         <input type="hidden" name="order_product_ID" value="<?php echo $row['order_product_ID']; ?>">
                         <input type="submit" name="Update" value="Update">
+                        <input type="submit" name="Delete" value="Delete">
                         </form>
                         </td>
                     </tr>
