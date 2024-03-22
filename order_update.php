@@ -3,6 +3,7 @@ require("header.php");
 
 $currencySymbol = "RM";
 $total_price = 0;
+$status = "";
 
 if (isset($_POST['new']) && $_POST['new'] == 1) {
     $order_ID = $_REQUEST['order_ID'];
@@ -13,6 +14,7 @@ if (isset($_POST['new']) && $_POST['new'] == 1) {
     $ins_query="INSERT into order_product (`order_ID`,`product_ID`,`quantity`,`unit_price`)
                 VALUES ('$order_ID','$product_ID','$quantity','$unit_price')";
     mysqli_query($con,$ins_query) or die(mysqli_error($con));
+    $status = "Product Record Inserted Successfully.";
 }
 
 if (isset($_POST['Update'])) {
@@ -21,7 +23,7 @@ if (isset($_POST['Update'])) {
 
     $upd_query="UPDATE order_product SET quantity = '".$quantity."' WHERE order_product_ID='".$order_product_ID."';";
     mysqli_query($con, $upd_query) or die(mysqli_error($con));
-    echo "Product Record Updated Successfully.";
+    $status = "Product Record Updated Successfully.";
 }
 
 if (isset($_POST['Delete'])) {
@@ -29,6 +31,7 @@ if (isset($_POST['Delete'])) {
 
     $del_query = "DELETE FROM `order_product` WHERE order_product_ID = $order_product_ID";
     $result = mysqli_query($con, $del_query) or die(mysqli_error($con));
+    $status = "Product Record Deleted Successfully.";
 }
 
 ?>
@@ -37,11 +40,14 @@ if (isset($_POST['Delete'])) {
 <html>
 <head>
     <meta charset = "utf-8">
+    
     <title>Update order</title>
 </head>
 
 <body>
     <h2>Order ID: <?php echo $_REQUEST['order_ID'] ?></h2>
+
+    <p> <?php echo $status; ?> </p>
 
     <table width="100%" border="1" style="border-collapse:collapse;">
         <thead>
@@ -73,7 +79,8 @@ if (isset($_POST['Delete'])) {
                         <td align="center">
                         <input type="hidden" name="order_product_ID" value="<?php echo $row['order_product_ID']; ?>">
                         <input type="submit" name="Update" value="Update">
-                        <input type="submit" name="Delete" value="Delete">
+                        <input type="submit" name="Delete" value="Delete"
+                            onclick="return confirm('Are you sure you want to delete this product?')">
                         </form>
                         </td>
                     </tr>

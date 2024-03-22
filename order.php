@@ -2,12 +2,14 @@
 require("header.php");
 
 $currencySymbol = "RM";
+$status = "";
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset = "utf-8">
+    <link rel="stylesheet" type="text/css" href="css/order.css">
     <title>Orders</title>
 </head>
 
@@ -19,8 +21,10 @@ $currencySymbol = "RM";
         <a href = "order_create.php">Create new order</a>
     </p>
 
+    <p> <?php echo $status; ?> </p>
+
     <table width="100%" border="1" style="border-collapse:collapse;">
-        <thead>
+        <thead class="tbl-header">
             <tr>
                 <th><strong>Order ID</strong></th>
                 <th><strong>Date and Time</strong></th>
@@ -30,7 +34,7 @@ $currencySymbol = "RM";
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="tbl-content">
         <?php
             $sel_query = "SELECT * FROM `order` WHERE user_ID = '{$_SESSION['customer_ID']}' ORDER BY order_ID DESC;";
             $result = mysqli_query($con,$sel_query);
@@ -44,7 +48,8 @@ $currencySymbol = "RM";
                 <td align="center">
                     <a href="order_view.php?order_ID=<?php echo $row['order_ID']; ?>">View</a>
                     <a href="order_update.php?order_ID=<?php echo $row['order_ID']; ?>">Update</a>
-                    <a href="order_delete.php?order_ID=<?php echo $row['order_ID']; ?>">Delete</a>
+                    <a href="order_delete.php?order_ID=<?php echo $row['order_ID']; ?>"
+                        onclick="return confirm('Are you sure you want to delete this order?')">Delete</a>
                 </td>
                 <td align="center">
                     <a href="order_confirm.php?order_ID=<?php echo $row['order_ID'];?>">Confirm</a>
