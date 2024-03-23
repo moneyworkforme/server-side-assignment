@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>User registration</title>
 <link rel="stylesheet" href="css/registration.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--to use boxicons icons-->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--to use boxicons icons-->
 </head>
 
 <body>
@@ -54,7 +54,7 @@ if (isset($_REQUEST['customer_name'])){
                 </div>
 
                 <div class="registerbtn">
-                    <input type="submit" name="submit" value="submit">
+                    <input type="submit" name="submit" value="Submit">
                 </div>
 
                 <div class="register">
