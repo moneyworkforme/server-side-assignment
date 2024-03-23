@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>User registration</title>
+<link rel="stylesheet" href="css/registration.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!--to use boxicons icons-->
 </head>
 
 <body>
@@ -28,14 +30,39 @@ if (isset($_REQUEST['customer_name'])){
 }
 ?>
 
-<div class = 'form'>
-    <h1>User registration</h1>
-    <form name="registration" acton="" method="post">
-        <input type = "text" name="customer_name" placeholder="username" required/><br>
-        <input type = "email" name="email" placeholder="email" required/><br>
-        <input type = "password" name="password" placeholder="password" required/><br>
-        <input type = "submit" name="submit" value="register" required/><br>
-    </form>
+<div class="container">
+    <div class="header">
+        account name
+    </div>
+    <div class="child">
+        <div class="wrapper">
+            <form action="" method="post" name="login">
+                <h1>Registration</h1>
+                <div class="input-box">
+                    <input type = "text" name="customer_name" placeholder="username" required/><br>
+                    <i class='bx bx-user'></i>
+                </div>
+
+                <div class="input-box">
+                    <input type = "email" name="email" placeholder="email" required/><br>
+                    <i class='bx bx-envelope'></i>
+                </div>
+
+                <div class="input-box">
+                    <input type = "password" name="password" placeholder="password" required/><br>
+                    <i class='bx bx-lock'></i>
+                </div>
+
+                <div class="registerbtn">
+                    <input type="submit" name="submit" value="submit">
+                </div>
+
+                <div class="register">
+                    <p>Already have an account? <a href="login.php">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 </body>

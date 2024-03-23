@@ -87,7 +87,7 @@ session_start();
                     </div>
                     
                     <div class="register">
-                        <p>Don't have an account? <a href="registtation.php"> Register </a></p>
+                        <p>Don't have an account? <a href="registration.php"> Register </a></p>
                     </div>
                 </form>
             </div>
