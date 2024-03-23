@@ -59,33 +59,42 @@ session_start();
     }
     ?>
 
-    <div class="wrapper">
-        <form action="" method="post" name="login">
-            <h1>User Login</h1>
+    <div class="container">
+        <div class="header">
+            account name
+        </div>
+        <div class="child">
+            <div class="wrapper">
+                <form action="" method="post" name="login">
+                    <h1>User Login</h1>
 
-            <div class="input-box">
-                <input type="text" name="customer_name" placeholder="Username" required /><br>
-                <i class='bx bx-user'></i>
-            </div>
+                    <div class="input-box">
+                        <input type="text" name="customer_name" placeholder="Username" required /><br>
+                        <i class='bx bx-user'></i>
+                    </div>
 
-            <div class="input-box">
-                <input type="password" name="password" placeholder="Password" required /><br>
-                <i class='bx bx-lock'></i>
-            </div>
+                    <div class="input-box">
+                        <input type="password" name="password" placeholder="Password" required /><br>
+                        <i class='bx bx-lock'></i>
+                    </div>
 
-            <div class="forgot">
-                <label><input type="checkbox" name="remember_me" id="remember_me">Remember Me</label>
-            </div>
+                    <div class="forgot">
+                        <label><input type="checkbox" name="remember_me" id="remember_me">Remember Me</label>
+                    </div>
 
-            <div class="loginbtn">
-                <input name="submit" type="submit" value="Login" />
+                    <div class="loginbtn">
+                        <input name="submit" type="submit" value="Login" />
+                    </div>
+                    
+                    <div class="register">
+                        <p>Don't have an account? <a href="registtation.php"> Register </a></p>
+                    </div>
+                </form>
             </div>
-            
-            <div class="register">
-                <p>Don't have an account? <a href="registtation.php"> Register </a></p>
-            </div>
-        </form>
+        </div>
+        
     </div>
+    
 
 </body>
 </html>
