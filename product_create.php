@@ -1,5 +1,5 @@
 <?php
-include("auth.php");
+include("header.php");
 require('database.php');
 $status = "";
 if(isset($_POST['new']) && $_POST['new']==1){
@@ -18,11 +18,12 @@ if(isset($_POST['new']) && $_POST['new']==1){
             $product_cat =$_REQUEST['product_category'];
             $product_quantity = $_REQUEST['product_quantity'];
             $date_record = date("Y-m-d H:i:s");
-            $submittedby = $_SESSION["username"];
+            $submittedby = $_SESSION["customer_ID"];
             $ins_query="INSERT into product (`product_name`,`product_desc`,`product_price`,`product_cat`,`product_quantity`,`product_image`,`product_reg_date`,`submittedby`)values
-            ('$product_name','$product_desc','$product_price','$product_cat','$uploadedFileName','$product_quantity','$date_record','$submittedby')";
+            ('$product_name','$product_desc','$product_price','$product_cat','$product_quantity','$uploadedFileName','$date_record','$submittedby')";
             mysqli_query($con,$ins_query) or die(mysqli_error($con));
             $status = "New product inserted successfully.";
+            header("Location: product_record.php");
         }else{
             $status = "Product insert failed.";
         }
@@ -42,14 +43,6 @@ if(isset($_POST['new']) && $_POST['new']==1){
 
 <body>
 <div class="container">
-    <div class="header">
-        <p>account name</p>
-        <nav>
-            <a href="dashboard.php">User Dashboard</a> |
-            <a href="product_record.php">View Product Records</a> |
-            <a href="logout.php">Logout</a>
-        </nav>
-    </div>
     <div class="child">
         <div class="wrapper">
             <form enctype="multipart/form-data" action="" method="post" name="form">
@@ -93,16 +86,16 @@ if(isset($_POST['new']) && $_POST['new']==1){
                 <!-- product_picture -->
                 <!-- <input type="file" name="file" id="fileInput" required/>
                 <label for="fileInput">Upload Product Image<i class='bx bx-upload' ></i></label> -->
-
                 <label>Upload Product Image<i class='bx bx-upload' ></i></label>
                 <input type="file" class="uploadbtn" name="image" required/>
-
-                
+                <!-- submit button -->
                 <div class="registerbtn">
                     <input type="submit" name="submit" value="Submit">
                 </div>
+                <div class="register">
+                    <p>Cancel operation? <a href="product_record.php"> Back </a></p>
+                </div>
             </form>
-            
             <p style="color:#008000;"><?php echo $status; ?></p>   
         </div>
     </div>

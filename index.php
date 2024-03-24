@@ -13,6 +13,22 @@ if(isset($_COOKIE["user"])) {
 <head>
     <meta charset="utf-8">
     <title>Welcome to Home Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+        .form {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="form">

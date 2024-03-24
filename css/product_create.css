@@ -17,30 +17,6 @@ body {
     background-color: #f2f2f2;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    color: #000000;
-    padding: 30px;
-    background-color: #fff;
-}
-
-.header p {
-    margin: 0; 
-}
-
-nav a {
-    text-decoration: none; 
-    color: #000000; 
-    margin-left: 10px; 
-}
-
-nav a:hover {
-    text-decoration: underline; 
-    color:#77398f;
-}
-
 .child {
     display: flex;
     justify-content: center;
@@ -200,6 +176,7 @@ label i {
 
 .register p a:hover {
     text-decoration: underline;
+    color: #77398f;
 }
 
 .wrapper .input-box .red-text {
