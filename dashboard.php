@@ -20,7 +20,9 @@ require("header.php");
 <body>
     <div class = "form">
         <p>Access Granted - This page is protected.</p>
+        <p><a href="product_record.php">Product record</a></p>
         <p><a href="order.php">Order</a></p>
+        
     </div>
 </body>
 </html>

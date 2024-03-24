@@ -36,7 +36,6 @@ require('header.php');
                 $sel_query="SELECT * FROM product ORDER BY id desc;";
                 $result = mysqli_query($con,$sel_query);
                 $currencySymbol = "RM";
-                // while loop being used - to display the result of data rows
                 while($row = mysqli_fetch_assoc($result)) { 
                 ?>
                 <tr><td align="center"><?php echo $count; ?></td> 
@@ -45,10 +44,10 @@ require('header.php');
                 <td align="center"><?php echo $currencySymbol . $row["product_price"]; ?></td>
                 <td align="center"><?php echo $row["product_cat"]; ?></td>
                 <td align="center"><?php echo $row["product_quantity"]; ?></td>
-                <td align="center"><img src="product_image/<?php echo $row["product_image"]; ?>"/></td>
+                <td align="center" class="product-image-cell"><img src="product_image/<?php echo $row["product_image"]; ?>"/></td>
                 <td align="center"><?php echo $row["product_reg_date"]; ?></td>
                 <td align="center">
-                <a href="update.php?id=<?php echo $row["id"]; ?>">Update</a> <!--get the responding id of the line-->
+                <a href="product_update.php?id=<?php echo $row["id"]; ?>">Update</a> <!--get the responding id of the line-->
                 </td>
                 <td align="center">
                 <a href="product_delete.php?id=<?php echo $row["id"]; ?>" onclick="return confirm('Are you sure 
