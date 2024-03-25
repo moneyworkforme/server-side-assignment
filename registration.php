@@ -39,17 +39,17 @@ if (isset($_REQUEST['customer_name'])){
             <form action="" method="post" name="login">
                 <h1>Registration</h1>
                 <div class="input-box">
-                    <input type = "text" name="customer_name" placeholder="username" required/><br>
+                    <input type = "text" name="customer_name" placeholder="Username" required/><br>
                     <i class='bx bx-user'></i>
                 </div>
 
                 <div class="input-box">
-                    <input type = "email" name="email" placeholder="email" required/><br>
+                    <input type = "email" name="email" placeholder="Email" required/><br>
                     <i class='bx bx-envelope'></i>
                 </div>
 
                 <div class="input-box">
-                    <input type = "password" name="password" placeholder="password" required/><br>
+                    <input type = "password" name="password" placeholder="Password" required/><br>
                     <i class='bx bx-lock'></i>
                 </div>
 
