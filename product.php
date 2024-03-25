@@ -17,8 +17,63 @@ require('main_header.php');
                 <button id="scrollDownBtn">Let's get started!</button>
             </div>
             <div id="content">
-                <div class="Charging_Accessories">
+                <div class="techkle_animate">
+                    <h2>Techkle</h2>
+                    <h2>Techkle</h2>
+                </div>
+                <h3>Explore a world of gadgets. Start browsing now!</h3>
+                <div class="nav_bar">
+                    <p>Category</p>
+                    <div class="flex-container">
+                        <div id="ca"><img src="css/ca.jpg"></div>
+                        <div id="pc"><img src="css/pc.jpg"></div>
+                        <div id="aa"><img src="css/aa.jpg"></div>
+                        <div id="sa"><img src="css/sa3.jpg"></div>
+                        <div id="ms"><img src="css/ms.jpg"></div>
+                        <div id="cm"><img src="css/cm.jpg"></div>
+                        <div id="ga"><img src="css/ga2.jpg"></div>
+                        <div id="fh"><img src="css/fh2.jpg"></div>
+                        <div id="fh"><img src="css/fh2.jpg"></div>
+                    </div>
+                </div>
+                <div id="ca_content" class="ca">
                     <p>Charging Accessories</p>
+                    <div class="line"></div>
+                    <div class="flexbox-container">
+                        <div>
+
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="pc_content" class="ca">
+                    <p>Protection and Cases</p>
+                    <div class="line"></div>
+                </div>
+                <div id="aa_content" class="ca">
+                    <p>Audio Accessories</p>
+                    <div class="line"></div>
+                </div>
+                <div id="sa_content" class="ca">
+                    <p>Storage Accessories</p>
+                    <div class="line"></div>
+                </div>
+                <div id="ms_content" class="ca">
+                    <p>Mounts and Stands</p>
+                    <div class="line"></div>
+                </div>
+                <div id="cm_content" class="ca">
+                    <p>Cleaning and Maintenance</p>
+                    <div class="line"></div>
+                </div>
+                <div id="ga_content" class="ca">
+                    <p>Gaming Accessories</p>
+                    <div class="line"></div>
+                </div>
+                <div id="fh_content" class="ca">
+                    <p>Fitness and Health Accessories</p>
                     <div class="line"></div>
                 </div>
             </div>
@@ -32,6 +87,37 @@ require('main_header.php');
             document.getElementById("content").scrollIntoView({ behavior: "smooth", block: "start" });
         });
 
+        document.getElementById("ca").addEventListener("click", function() {
+            document.getElementById("ca_content").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        
+        document.getElementById("pc").addEventListener("click", function() {
+            document.getElementById("pc_content").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        
+        document.getElementById("aa").addEventListener("click", function() {
+            document.getElementById("aa_content").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        
+        document.getElementById("sa").addEventListener("click", function() {
+            document.getElementById("sa_content").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        
+        document.getElementById("ms").addEventListener("click", function() {
+            document.getElementById("ms_content").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        
+        document.getElementById("cm").addEventListener("click", function() {
+            document.getElementById("cm_content").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        
+        document.getElementById("ga").addEventListener("click", function() {
+            document.getElementById("ga_content").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        
+        document.getElementById("fh").addEventListener("click", function() {
+            document.getElementById("fh_content").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
     </script>
 </body>
 
